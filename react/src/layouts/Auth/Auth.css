@@ -31,12 +31,27 @@
 
 .fields-box {
   width: 65%;
-  margin: 4.5vh auto;
+  margin: 2vh auto;
 }
 
 .fields-box .ant-input {
   padding: 25px;
-  margin-top: 20px;
+}
+
+.fields-box .ant-input-affix-wrapper .ant-input-prefix {
+  top: 46%;
+}
+
+.fields-box .ant-input-password .ant-input-prefix {
+  top: 47%;
+}
+
+.fields-box .ant-input-affix-wrapper {
+  font-size: 1.2rem;
+}
+
+.fields-box .ant-input-affix-wrapper .ant-input:not(:first-child) {
+  padding-left: 45px;
 }
 
 .fields-box button {

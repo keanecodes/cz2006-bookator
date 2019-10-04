@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
+import axios from 'axios'
+
 import "antd/dist/antd.css";
 import './index.css';
 
@@ -9,6 +11,8 @@ import * as serviceWorker from './serviceWorker';
 
 import AppLayout from "./layouts/App/App";
 import AuthLayout from "./layouts/Auth/Auth";
+
+axios.defaults.baseURL = "https://asia-east2-cs2006-bookator.cloudfunctions.net/api"
 
 const hist = createBrowserHistory();
 
