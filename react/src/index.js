@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import AppLayout from "./layouts/App/App";
 import AuthLayout from "./layouts/Auth/Auth";
 
-axios.defaults.baseURL = "https://asia-east2-cs2006-bookator.cloudfunctions.net/api"
+axios.defaults.baseURL = "https://asia-east2-cz2006-bookator.cloudfunctions.net/api"
 
 const hist = createBrowserHistory();
 

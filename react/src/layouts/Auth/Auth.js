@@ -24,12 +24,10 @@ class AuthLayout extends Component {
 
     this.props.form.validateFields((err, formValues) => {
       if (!err) {
-        console.log("Received values of form: ", formValues);
         this.setState({ loading: true }, () => {
           axios
           .post('/login', formValues)
           .then(res => {
-            console.log(res.data);
             this.setState({loading: false});
             this.props.history.push('/app');
           })

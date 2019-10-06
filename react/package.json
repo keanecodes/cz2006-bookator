@@ -11,6 +11,7 @@
     "react-scripts": "3.1.2"
   },
   "scripts": {
+    "analyse": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

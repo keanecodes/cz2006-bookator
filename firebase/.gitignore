@@ -64,3 +64,4 @@ functions/package-lock.json
 
 # dotenv environment variables file
 .env
+functions/util/firebase-adminsdk.json
