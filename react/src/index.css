@@ -27,7 +27,6 @@
 }
 body {
   background-color: rgba(236, 244, 248, 0.98);
-  margin: 0;
   font-family: "Gotham", "Roboto", "Helvetica Neue", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,10 +37,15 @@ code {
     monospace;
 }
 
+@media screen and (max-width: 500px) {
+  /*disable scrolling*/
+  html, body {margin: 0; height: 100%; overflow: hidden}
+}
+
 .ant-input {
   border-radius: 25px;
   padding: 20px;
-  border: 2px solid white;;
+  border: 2px solid transparent;
   margin: 5px 0; /*top-5px bottom-0*/
   color: #4275FF;
 }

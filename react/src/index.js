@@ -10,9 +10,9 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import AppLayout from "./layouts/App/App";
-import AuthLayout from "./layouts/Auth/Auth";
+import Login from "./layouts/Auth/Login/Login";
 
-axios.defaults.baseURL = "https://asia-east2-cz2006-bookator.cloudfunctions.net/api"
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 const hist = createBrowserHistory();
 
@@ -26,12 +26,12 @@ ReactDOM.render(
         }}
       />
       <Route
-        path="/auth"
+        path="/login"
         render={props => {
-          return <AuthLayout {...props} />;
+          return <Login {...props} />;
         }}
       />
-      <Redirect to="/auth" />
+      <Redirect to="/login" />
     </Switch>
   </Router>,
 document.getElementById("root")

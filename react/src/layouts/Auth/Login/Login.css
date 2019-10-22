@@ -1,3 +1,5 @@
+
+/* ------- BACKGROUND ------- */
 .auth-decor {
   position: absolute;
   left: -100px;
@@ -6,36 +8,66 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 1024px) and (orientation:portrait) {
+  .auth-decor {
+    display: none;
+  }
+}
+
+/* ------- LOGIN BOX ------- */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  to   {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .login-box {
-  background: rgba(131, 206, 255, 0.35);
+  background: rgb(200, 230, 250);
   height: 65vh;
-  min-width: 300px;
-  width: 500px;
+  min-width: 500px;
+  width: 25vw;
   max-width: 30vw;
   border-radius: 35px;
   text-align: center;
-  margin: 20vh auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: fadein 1s;
 }
 
-.logo-box {
-  font-size: 3.5rem;
-  line-height: 3.5rem;
-  color: #5172CB;
-  font-weight: 400;
+@media screen and (max-width: 500px) {
+  .login-box {
+    min-width: 100%;
+    height: 100%;
+    border-radius: 0 0 35px 35px;
+    animation: none;
+  }
 }
 
 .logo-icon {
-  margin-top: 60px;
+  width: 55%;
 }
 
+/* ------- FORM FIELDS ------- */
 .fields-box {
-  width: 65%;
-  margin: 2vh auto;
+  width: 80%;
+  margin: 3vh auto;
 }
 
 .fields-box .ant-input {
-  padding: 25px;
+  padding: 2.5vh;
 }
 
 .fields-box .ant-input-affix-wrapper .ant-input-prefix {
@@ -52,6 +84,10 @@
 
 .fields-box .ant-input-affix-wrapper .ant-input:not(:first-child) {
   padding-left: 45px;
+}
+
+.fields-box .ant-form-item {
+  margin-bottom: 1vh;
 }
 
 .fields-box button {
@@ -73,12 +109,12 @@
   width: 100%;
 }
 
+/* ------- LOGIN SIGNUP BTN BOX ------- */
 .btns-box {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 10%;
-
 }
 
 .btns-box button {
@@ -103,4 +139,14 @@
 
 .btns-box button:nth-child(2) {
   border-radius: 35px 0 35px 0;
+}
+
+@media screen and (max-width: 500px) {
+  .btns-box button:nth-child(1) {
+    border-radius: 0 35px 0 0;
+  }
+
+  .btns-box button:nth-child(2) {
+    border-radius: 35px 0 0 0;
+  }
 }
