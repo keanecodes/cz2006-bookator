@@ -19,6 +19,6 @@
       <circle id="Ellipse_2" data-name="Ellipse 2" cx="14.568" cy="14.568" r="14.568" transform="translate(81.933 22.867)" fill="#fff"/>
       <path id="Path_10" data-name="Path 10" d="M340.751,324.485a36.991,36.991,0,0,0-27.847,61.35l-.012.014.18.178a37.053,37.053,0,0,0,3.138,3.138l24.52,24.52,24.239-24.238a36.992,36.992,0,0,0-24.218-64.962Zm-.235,50.847a14.374,14.374,0,1,1,14.374-14.374A14.373,14.373,0,0,1,340.516,375.332Z" transform="translate(-244.152 -323.629)" fill="url(#linear-gradient-4)"/>
     </g>
-    <text id="bookator" transform="translate(2 180.114)" fill="#5172cb" font-size="4vh" font-family="Gotham-Bold, Gotham" font-weight="700"><tspan text-anchor="middle" x="50%" y="0">bookator</tspan></text>
+    <text id="bookator" transform="translate(2 180.114)" fill="#5172cb" font-size="50" font-family="Gotham-Bold, Gotham" font-weight="700"><tspan text-anchor="middle" x="50%" y="0">bookator</tspan></text>
   </g>
 </svg>

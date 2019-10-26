@@ -9,8 +9,8 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
-import AppLayout from "./layouts/App/App";
-import Login from "./layouts/Auth/Login/Login";
+import Hub from "./layouts/User/Hub/Hub";
+import Login from "./layouts/User/Login/Login";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
@@ -20,9 +20,9 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route
-        path="/app"
+        path="/hub"
         render={props => {
-          return <AppLayout {...props} />;
+          return <Hub {...props} />;
         }}
       />
       <Route

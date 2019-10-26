@@ -1,0 +1,146 @@
+.hub__user-cont {
+  width: 65vw;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 2vh;
+  color: #4275FF;
+  justify-content: center;
+}
+
+.hub__profile {
+  width: 10%;
+}
+
+.hub__hook {
+  width: 50vw;
+  color: #4275FF;
+  text-align: center;
+  margin: 5vh auto 0 auto ;
+  font-size: 2.3vw;
+}
+
+@media screen and (max-width: 500px) {
+  .hub__user-cont {
+    float: left;
+    font-size: 5vw;
+  }
+
+  .hub__profile {
+    width: 45%;
+  }
+
+  .hub__hook {
+    width: 65vw;
+    text-align: right;
+    float: right;
+    margin: 0 5vw 0 0;
+    font-size: 7vw;
+    font-weight: 600;
+  }
+}
+
+
+.hub__actions {
+  width: 60vw;
+  height: 37vw;
+  margin: 2vh auto 0 auto;
+  text-align: center;
+  position: relative;
+  animation: fadein 1s;
+}
+
+.hub__donation-btn {
+  width: 50%;
+  position: absolute;
+  left: 0;
+}
+
+.hub__collection-btn {
+  width: 63%;
+  position: absolute;
+  right: 8vw;
+  top: -10vh;
+}
+
+.hub__delivery-btn {
+  width: 33%;
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .hub__actions {
+    width: 100vw;
+    height: 80vh;
+    clear: both;
+  }
+
+  .hub__donation-btn {
+    width: 100%;
+    height: 80%;
+    left: -40%;
+    top: -15%;
+  }
+
+  .hub__collection-btn {
+    width: 105%;
+    right: -12%;
+    top: -10%;
+  }
+
+  .hub__delivery-btn {
+    width: 80%;
+    top: 35%;
+    left: -18%;
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation:portrait) {
+  .hub__user-cont {
+    float: left;
+    font-size: 4vw;
+  }
+
+  .hub__profile {
+    width: 35%;
+  }
+
+  .hub__hook {
+    width: 45vw;
+    text-align: right;
+    float: right;
+    margin: 0 5vw 0 0;
+    font-size: 5.5vw;
+    font-weight: 600;
+  }
+
+  .hub__actions {
+    width: 80vw;
+    height: 60vh;
+    margin: 0 auto;
+    clear: both;
+  }
+
+  .hub__donation-btn {
+    width: 110%;
+    height: 80%;
+    left: -35%;
+    top: -10%;
+  }
+
+  .hub__collection-btn {
+    width: 90%;
+    right: -5%;
+    top: -5%;
+  }
+
+  .hub__delivery-btn {
+    width: 60%;
+    left: -5%;
+    top: 45%;
+  }
+}
