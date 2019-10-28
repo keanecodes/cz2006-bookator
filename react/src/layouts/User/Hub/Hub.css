@@ -18,7 +18,7 @@
   width: 50vw;
   color: #4275FF;
   text-align: center;
-  margin: 5vh auto 0 auto ;
+  margin: 3vh auto 0 auto ;
   font-size: 2.3vw;
 }
 
@@ -44,32 +44,93 @@
 
 
 .hub__actions {
-  width: 60vw;
-  height: 37vw;
-  margin: 2vh auto 0 auto;
+  width: 50vw;
+  height: 33vw;
+  margin: 10vh auto 0 auto;
   text-align: center;
   position: relative;
+  color: white;
+  font-weight: 600;
   animation: fadein 1s;
 }
 
-.hub__donation-btn {
-  width: 50%;
+.hub__donation-btn,
+.hub__donation-btn p,
+.hub__donation-btn span,
+.hub__collection-btn,
+.hub__collection-btn p,
+.hub__collection-btn span,
+.hub__voluntary-btn,
+.hub__voluntary-btn p,
+.hub__voluntary-btn span {
+  cursor: pointer;
   position: absolute;
+}
+
+.hub__donation-btn .de0,
+.hub__collection-btn .bc0,
+.hub__voluntary-btn .vd0 {
+  transition: all 0.5s ease;
+}
+
+.hub__donation-btn:hover .de0,
+.hub__collection-btn:hover .bc0,
+.hub__voluntary-btn:hover .vd0 {
+  transform: rotate(-0.5deg);
+  transition: all 0.5s ease;
+}
+
+.hub__donation-btn {
+  width: 45%;
   left: 0;
 }
 
-.hub__collection-btn {
-  width: 63%;
-  position: absolute;
-  right: 8vw;
-  top: -10vh;
+.hub__donation-btn p {
+  font-size: 2vh;
+  left: 20%;
+  top: 43%;
 }
 
-.hub__delivery-btn {
-  width: 33%;
-  position: absolute;
+.hub__donation-btn span {
+  font-size: 3.5vh;
+  left: 20%;
+  top: 50%;
+}
+
+.hub__collection-btn {
+  width: 65%;
+  right: 0;
+  top: -5vh;
+}
+
+.hub__collection-btn p {
+  font-size: 3.5vh;
+  right: 20%;
+  top: 40%;
+}
+
+.hub__collection-btn span {
+  font-size: 5vh;
+  right: 20%;
+  top: 47%;
+}
+
+.hub__voluntary-btn {
+  width: 30%;
   left: 15%;
-  bottom: 0;
+  bottom: -3%;
+}
+
+.hub__voluntary-btn p {
+  font-size: 2vh;
+  left: 20%;
+  top: 38%;
+}
+
+.hub__voluntary-btn span {
+  font-size: 3vh;
+  left: 20%;
+  top: 47%;
 }
 
 @media screen and (max-width: 500px) {
@@ -80,22 +141,58 @@
   }
 
   .hub__donation-btn {
-    width: 100%;
+    width: 75%;
     height: 80%;
-    left: -40%;
-    top: -15%;
-  }
-
-  .hub__collection-btn {
-    width: 105%;
-    right: -12%;
+    left: -25%;
     top: -10%;
   }
 
-  .hub__delivery-btn {
-    width: 80%;
+  .hub__donation-btn p {
+    font-size: 4.5vw;
+    left: 35%;
+    top: 28%;
+  }
+
+  .hub__donation-btn span {
+    font-size: 7vw;
+    left: 35%;
+    top: 33%;
+  }
+
+  .hub__collection-btn {
+    width: 85%;
+    right: -12%;
+    top: 0%;
+  }
+
+  .hub__collection-btn p {
+    font-size: 6vw;
+    right: 20%;
+    top: 38%;
+  }
+
+  .hub__collection-btn span {
+    font-size: 9vw;
+    right: 20%;
+    top: 47%;
+  }
+
+  .hub__voluntary-btn {
+    width: 60%;
     top: 35%;
-    left: -18%;
+    left: -10%;
+  }
+
+  .hub__voluntary-btn p {
+    font-size: 4.5vw;
+    left: 20%;
+    top: 25%;
+  }
+
+  .hub__voluntary-btn span {
+    font-size: 7vw;
+    left: 20%;
+    top: 30%;
   }
 }
 
@@ -126,21 +223,51 @@
   }
 
   .hub__donation-btn {
-    width: 110%;
+    width: 50%;
     height: 80%;
-    left: -35%;
-    top: -10%;
-  }
-
-  .hub__collection-btn {
-    width: 90%;
-    right: -5%;
+    left: 0%;
     top: -5%;
   }
 
-  .hub__delivery-btn {
-    width: 60%;
-    left: -5%;
-    top: 45%;
+  .hub__donation-btn p {
+    left: 15%;
+    top: 25%;
+  }
+
+  .hub__donation-btn span {
+    left: 15%;
+    top: 30%;
+  }
+
+  .hub__collection-btn {
+    width: 70%;
+    right: 0%;
+    top: 0%;
+  }
+
+  .hub__collection-btn p {
+    right: 10%;
+    top: 40%;
+  }
+
+  .hub__collection-btn span {
+    right: 10%;
+    top: 47%;
+  }
+
+  .hub__voluntary-btn {
+    width: 35%;
+    left: 2%;
+    top: 40%;
+  }
+
+  .hub__voluntary-btn p {
+    left: 15%;
+    top: 25%;
+  }
+
+  .hub__voluntary-btn span {
+    left: 15%;
+    top: 30%;
   }
 }

@@ -12,6 +12,10 @@ import * as serviceWorker from './serviceWorker';
 import Hub from "./layouts/User/Hub/Hub";
 import Login from "./layouts/User/Login/Login";
 
+import Collections from "./layouts/App/Collections/Collections";
+import Donations from "./layouts/App/Donations/Donations";
+import Voluntary from './layouts/App/Voluntary/Voluntary';
+
 axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 const hist = createBrowserHistory();
@@ -29,6 +33,24 @@ ReactDOM.render(
         path="/login"
         render={props => {
           return <Login {...props} />;
+        }}
+      />
+      <Route
+        path="/collections"
+        render={props => {
+          return <Collections {...props} />;
+        }}
+      />
+      <Route
+        path="/donations"
+        render={props => {
+          return <Donations {...props} />;
+        }}
+      />
+      <Route
+        path="/voluntary"
+        render={props => {
+          return <Voluntary {...props} />;
         }}
       />
       <Redirect to="/login" />

@@ -18,10 +18,21 @@ class Hub extends Component {
         </div>
         <p className="hub__hook">Ready for your "bookenture"?</p>
         <div className="hub__actions">
-          {/* <Actions /> */}
-          <VoluntaryDelivery className="hub__delivery-btn"/>
-          <BookCollections className="hub__collection-btn"/>
-          <DonationExchange className="hub__donation-btn"/>
+          <div className="hub__voluntary-btn" onClick={()=>{this.props.history.push('/voluntary');}}>
+            <VoluntaryDelivery/>
+            <p>Deliver books</p>
+            <span>Voluntary</span>
+          </div>
+          <div className="hub__collection-btn" onClick={()=>{this.props.history.push('/collections');}}>
+            <BookCollections/>
+            <p>Browse book</p>
+            <span>Collections</span>
+          </div>
+          <div className="hub__donation-btn" onClick={()=>{this.props.history.push('/donations');}}>
+            <DonationExchange className="hub__donation-btn--svg"/>
+            <p>View exchanged</p>
+            <span>Donations</span>
+          </div>
         </div>
       </>
     );
