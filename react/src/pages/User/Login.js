@@ -8,7 +8,7 @@ import axios from 'axios';
 //UI STUFF
 import { Form, Icon, Input, Button } from "antd";
 import "./Login.css";
-import { ReactComponent as Logo } from "../../../logo.svg";
+import { ReactComponent as Logo } from "logo.svg";
 import { ReactComponent as BackDrop1 } from "./assets/men-book.svg";
 
 // import routes from "routes.js";
@@ -29,7 +29,7 @@ class Login extends Component {
           .post('/login', formValues)
           .then(res => {
             this.setState({loading: false});
-            this.props.history.push('/hub');
+            this.props.history.push('/user/hub');
           })
           .catch(err => {
             this.setState({

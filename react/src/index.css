@@ -76,34 +76,34 @@ code {
 
 .ant-btn {
   border-radius: 25px;
-  border: 2px solid white;
+  border: 1px solid white;
   color: #4275FF;
 }
 
 .ant-btn:hover {
-  border: 2px solid #4275FF;
+  border: 1px solid #4275FF;
   color: #4275FF;
 }
 
 .ant-btn:focus {
-  border: 2px solid white;
+  border: 1px solid white;
   color: #4275FF;
 }
 
 .ant-btn-primary {
   background-color: #4275FF;
-  border: 2px solid #4275FF;
+  border: 1px solid #4275FF;
   color: white;
 }
 
 .ant-btn-primary:hover {
   background-color: #4275FF;
-  border: 2px solid white;
+  border: 1px solid white;
   color: white;
 }
 
 .ant-btn-primary:focus {
-  border: 2px solid white;
+  border: 1px solid white;
   color: white;
 }
 
