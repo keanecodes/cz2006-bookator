@@ -1,0 +1,68 @@
+.ant-layout-sider {
+  min-width: 15vw !important;
+  font-family: 'Gotham';
+  color: #4275FF;
+  padding: 15px 20px;
+}
+
+.logo {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-top: 1.5vh;
+}
+
+.sidebar__logo--svg {
+  /* padding: 10px 5px; */
+  min-width: 60px;
+  width: 25%;
+  margin-right: 10px;
+}
+
+.sidebar__logo--title {
+  font-size: 1.4vw;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 980px) {
+  .sidebar__logo--title {
+    display: none;
+  }
+}
+
+.ant-menu {
+  margin-top: 30px;
+}
+
+.ant-menu-item .anticon {
+  font-size: 2vh;
+}
+
+.ant-menu-vertical .ant-menu-item {
+  border-radius: 35px;
+  padding: 0 25px;
+  height: 55px;
+  line-height: 55px;
+  font-weight: 600;
+  font-size: 0.85vw;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.ant-menu-item > a {
+  color: #4275FF;
+}
+
+.ant-menu-item-selected > a,
+.ant-menu-item-selected > a:hover {
+  color: white;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #4275FF;
+}
+
+

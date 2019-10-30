@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="252" viewBox="0 0 252 191.114">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.192" y1="0.248" x2="0.799" y2="0.856" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4275ff"/>
+      <stop offset="0.994" stop-color="#83ceff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.076" y1="0.242" x2="0.606" y2="0.709" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="0.073" y1="0.06" x2="0.78" y2="0.647" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f76b1c"/>
+      <stop offset="1" stop-color="#fad961"/>
+    </linearGradient>
+  </defs>
+  <g id="logo" transform="translate(-2)">
+    <g id="Group_2" data-name="Group 2" transform="translate(61.886)">
+      <path id="Path_6" data-name="Path 6" d="M383.882,388.041a36.916,36.916,0,0,0,8.112-40.223,40.008,40.008,0,0,1,1.437,3.763A39.892,39.892,0,0,0,355.5,324H286.309A16.309,16.309,0,0,0,270,340.309v93.274a15.789,15.789,0,0,0,15.79,15.79h68.962a40.62,40.62,0,0,0,40.621-40.621c0,.994-.048,1.978-.118,2.956A35.175,35.175,0,0,0,383.882,388.041Z" transform="translate(-270 -324)" fill="url(#linear-gradient)"/>
+      <path id="Path_7" data-name="Path 7" d="M384.882,388.041a36.916,36.916,0,0,0,8.112-40.223,40.008,40.008,0,0,1,1.437,3.763A39.892,39.892,0,0,0,356.5,324H287.309A16.309,16.309,0,0,0,271,340.309v93.274a15.789,15.789,0,0,0,15.79,15.79h68.962a40.62,40.62,0,0,0,40.621-40.621c0,.994-.048,1.978-.118,2.956A35.175,35.175,0,0,0,384.882,388.041Z" transform="translate(-269.234 -324)" fill="#fff"/>
+      <path id="Path_8" data-name="Path 8" d="M388.882,388.041a36.916,36.916,0,0,0,8.112-40.223,40.041,40.041,0,0,1,1.437,3.763A39.892,39.892,0,0,0,360.5,324H291.309A16.309,16.309,0,0,0,275,340.309v93.274a15.789,15.789,0,0,0,15.79,15.79h68.962a40.62,40.62,0,0,0,40.621-40.621c0,.994-.048,1.978-.118,2.956A35.175,35.175,0,0,0,388.882,388.041Z" transform="translate(-266.171 -324)" fill="url(#linear-gradient)"/>
+      <path id="Path_9" data-name="Path 9" d="M346.845,377.955l-.215-.2.016-.014A37.955,37.955,0,0,1,335.7,351.316,37.5,37.5,0,0,1,343.965,328a32.384,32.384,0,0,0-7.655,5.147L275,388.807V429.17c0,9.465,3.7,17.139,14.126,17.139h37.082L379.183,395.1,350.6,381.361A43.043,43.043,0,0,1,346.845,377.955Z" transform="translate(-266.171 -320.937)" opacity="0.83" fill="url(#linear-gradient-3)"/>
+      <circle id="Ellipse_2" data-name="Ellipse 2" cx="14.568" cy="14.568" r="14.568" transform="translate(81.933 22.867)" fill="#fff"/>
+      <path id="Path_10" data-name="Path 10" d="M340.751,324.485a36.991,36.991,0,0,0-27.847,61.35l-.012.014.18.178a37.053,37.053,0,0,0,3.138,3.138l24.52,24.52,24.239-24.238a36.992,36.992,0,0,0-24.218-64.962Zm-.235,50.847a14.374,14.374,0,1,1,14.374-14.374A14.373,14.373,0,0,1,340.516,375.332Z" transform="translate(-244.152 -323.629)" fill="url(#linear-gradient-4)"/>
+    </g>
+    <text id="bookator" transform="translate(2 180.114)" fill="#5172cb" font-size="50" font-family="Gotham-Bold, Gotham" font-weight="700"><tspan text-anchor="middle" x="50%" y="0">bookator</tspan></text>
+  </g>
+</svg>

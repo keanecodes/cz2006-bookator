@@ -26,21 +26,21 @@ export let routes = [
   },
   {
     path: "/collections",
-    name: "Browse Books Collections",
+    name: "Books Collections",
     icon: "read",
     component: Collections,
     layout: "/app"
   },
   {
     path: "/donations",
-    name: "View Exchanged Donations",
+    name: "Donation Exchange",
     icon: "solution",
     component: Donations,
     layout: "/app"
   },
   {
     path: "/voluntary",
-    name: "Deliver Book Voluntary",
+    name: "Delivery Volunteer",
     icon: "team",
     component: Voluntary,
     layout: "/app"

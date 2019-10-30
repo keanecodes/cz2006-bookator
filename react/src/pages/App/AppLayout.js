@@ -22,8 +22,7 @@ export class AppLayout extends Component {
         <Layout style={{ minHeight: '100vh', background: '#fff' }}>
           <Sidebar/>
           <Layout>
-            <Layout.Header style={{ background: '#fff', padding: 0 }} />
-            <Layout.Content>
+            <Layout.Content style={{background: "#fff"}}>
               <Switch>
                 {getRoutes("/app")}
               </Switch>

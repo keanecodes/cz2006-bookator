@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import { Typography } from "antd";
+
+import CollectionsHeader from "components/CollectionsHeader";
 
 export class Collections extends Component {
   render() {
     return (
       <div>
-        <h1>Collections</h1>
+        <CollectionsHeader/>
+        <Typography.Title level={1}>New Donation Uploads</Typography.Title>
       </div>
     )
   }

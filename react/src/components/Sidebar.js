@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 
 import { Layout, Menu, Icon } from 'antd'
+import "./Sidebar.css"
+import { ReactComponent as Logo } from "logo.svg";
 
 import { routes } from "routes.js"
 
@@ -35,12 +37,12 @@ export class Sidebar extends Component {
         <Layout.Sider
           theme="light"
           breakpoint="lg"
-          onBreakpoint={broken => {
-            console.log(broken);
-          }}
         >
-          <div className="logo" style={{ height: "32px", background: "rgba(0, 0, 0, 0.2)", margin: "16px"}}/>
-          <Menu mode="inline">
+          <div className="logo" >
+            <Logo className="sidebar__logo--svg"/>
+            <span className="sidebar__logo--title">bookator</span>
+          </div>
+          <Menu>
             {this.createLinks(routes)}
           </Menu>
         </Layout.Sider>

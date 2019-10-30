@@ -8,7 +8,7 @@ import axios from 'axios';
 //UI STUFF
 import { Form, Icon, Input, Button } from "antd";
 import "./Login.css";
-import { ReactComponent as Logo } from "logo.svg";
+import { ReactComponent as Logo } from "./assets/logo.svg";
 import { ReactComponent as BackDrop1 } from "./assets/men-book.svg";
 
 // import routes from "routes.js";
