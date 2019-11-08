@@ -15,25 +15,26 @@ import { ReactComponent as BackDrop1 } from "./assets/men-book.svg";
 
 class Login extends Component {
   state = {
-    loading: false,
+    loadingLogin: false,
+    loadingRegister: false,
     errors: {}
   };
 
-  handleSubmit = e => {
+  handleSubmitLogin = e => {
     e.preventDefault();
 
     this.props.form.validateFields((err, formValues) => {
       if (!err) {
-        this.setState({ loading: true }, () => {
+        this.setState({ loadingLogin: true }, () => {
           axios
           .post('/login', formValues)
           .then(res => {
-            this.setState({loading: false});
+            this.setState({loadingLogin: false});
             this.props.history.push('/user/hub');
           })
           .catch(err => {
             this.setState({
-              loading: false,
+              loadingLogin: false,
               errors: err.response
                 ? err.response.data
                 : {general: "Fail to establish connection with our servers :("}
@@ -45,6 +46,32 @@ class Login extends Component {
     });
   };
 
+  handleSubmitRegister = e => {
+    e.preventDefault();
+
+    this.props.form.validateFields((err, formValues) => {
+      if (!err) {
+        this.setState({ loadingRegister: true }, () => {
+          axios
+          .post('/login', formValues)
+          .then(res => {
+            this.setState({loadingRegister: false});
+            this.props.history.push('/user/register');
+          })
+          .catch(err => {
+            this.setState({
+              loadingRegister: false,
+              errors: err.response
+                ? err.response.data
+                : {general: "Fail to establish connection with our servers :("}
+            })
+            console.error(this.state.errors);
+          })
+        });
+      }
+    });
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const { errors } = this.state;
@@ -53,7 +80,8 @@ class Login extends Component {
         <div className="Auth">
           <BackDrop1 className="auth-decor auth-backdrop1" />
           <div className="login-box">
-            <Form onSubmit={this.handleSubmit} className="login-form">
+            {/* change to submit for register and login */}
+            <Form className="login-form">
               <div className="login-fields-wrapper">
                 <Logo className="logo-icon" />
                 <div className="fields-box">
@@ -89,8 +117,11 @@ class Login extends Component {
                 }
               </div>
               <div className="btns-box">
-                <Button>Sign Up</Button>
-                <Button type="primary" htmlType="submit" loading={this.state.loading}>
+                <Button onClick={this.handleSubmitRegister} loading={this.state.loadingRegister}>
+                  Sign Up
+                </Button>
+                {/* <Button type="primary" htmlType="submit" loading={this.state.loading}>  */}
+                <Button type="primary" onClick={this.handleSubmitLogin} loading={this.state.loadingLogin}>
                   Login
                 </Button>
               </div>

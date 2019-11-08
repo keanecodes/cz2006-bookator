@@ -1,6 +1,7 @@
 //User routes
 import Hub from "pages/User/Hub";
 import Login from "pages/User/Login";
+import Register from "pages/User/Register";
 //App routes
 import Collections from "pages/App/Collections/Collections";
 import Donations from "pages/App/Donations/Donations";
@@ -16,6 +17,12 @@ export let routes = [
     path: "/login",
     name: "Dashboard",
     component: Login,
+    layout: "/user"
+  },
+  {
+    path: "/register",
+    name: "Dashboard",
+    component: Register,
     layout: "/user"
   },
   {
