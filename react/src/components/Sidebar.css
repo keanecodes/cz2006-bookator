@@ -5,12 +5,30 @@
   padding: 15px 25px 5px 20px;
 }
 
-.logo {
+.logo a {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
   margin-top: 1.5vh;
+  color: var(--blue);
+  width: 75%;
+}
+
+.logo a span:after,
+.logo a span:after {
+  content: '';
+  width: 0px;
+  height: 3px;
+  display: block;
+  background: #4275FF;
+  transition: 120ms;
+  float: right;
+}
+
+.logo a:hover span:after,
+.logo a:hover span:after {
+  width: 100%;
 }
 
 .sidebar__logo--svg {
@@ -54,6 +72,10 @@
   display: flex;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.ant-menu-vertical .ant-menu-item:hover {
+  background-color: rgba(131,206,255,0.15);
 }
 
 .ant-menu-item > a {

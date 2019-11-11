@@ -1,5 +1,10 @@
+.voluntary__container .header__profile {
+  margin-top: 3.5vh;
+  margin-left: 80%;
+}
+
 .voluntary__container h2.ant-typography {
   color: var(--blue);
   padding-left: 8px;
-  margin-top: 12vh;
+  margin-top: 4vh;
 }

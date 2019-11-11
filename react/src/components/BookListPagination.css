@@ -1,0 +1,93 @@
+.booklistpagination__container .ant-list-pagination {
+  text-align: center !important;
+  margin-bottom: 3.5vh;
+}
+
+.booklistpagination__container .ant-list-item {
+  padding-right: 5px;
+}
+
+.booklistpagination__container .list-item__options {
+  position: absolute;
+  right: 0;
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+.booklistpagination__container .list-item__img {
+  float: left;
+  width: 35%;
+  border-radius: 20px;
+  min-height: 150px;
+  margin-bottom: 4.5vh;
+  margin-right: 1.3vw;
+}
+
+.booklistpagination__container .list-item__score {
+  font-size: 1.5vw;
+  font-weight: 300;
+  color: #AAA ;
+  margin-bottom: 5px;
+}
+
+.booklistpagination__container .list-item__title {
+  font-size: 1.3vw;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 1px;
+}
+
+.booklistpagination__container .list-item__author {
+  font-size: 1.1vw;
+  font-weight: 700;
+  color: #AAA;
+}
+
+.booklistpagination__container .list-item__tag {
+  position: absolute;
+  bottom: 4.5vh;
+  border: 1px solid transparent;
+  width: 30%;
+  text-align: center;
+}
+
+.booklistpagination__container .ant-pagination {
+  color: var(--blue);
+  font-weight: 300;
+}
+
+.booklistpagination__container .ant-pagination-next a:not([aria-disabled="true"]),
+.booklistpagination__container .ant-pagination-prev a:not([aria-disabled="true"]) {
+  border: 1px solid transparent;
+  font-size: 1.5vw;
+  color: var(--blue);
+}
+
+.booklistpagination__container .ant-pagination-disabled {
+  opacity: 0.4;
+}
+
+.booklistpagination__container .ant-pagination-item-link:hover {
+  background-color: rgba(131,206,255,0.15);
+  border-radius: 25px;
+}
+
+.booklistpagination__container .ant-pagination-item {
+  border-radius: 25px;
+  border: 1px solid transparent;
+}
+
+.booklistpagination__container .ant-pagination-item a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.booklistpagination__container .ant-pagination-item-active {
+  background-color: rgba(131,206,255,0.15);
+}
+
+.booklistpagination__container .ant-pagination-item:hover {
+  background-color: rgba(131,206,255,0.05);
+}

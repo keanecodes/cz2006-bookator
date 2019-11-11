@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 import { Layout, Menu, Icon } from 'antd'
 import "./Sidebar.css"
@@ -39,8 +39,10 @@ export class Sidebar extends Component {
           breakpoint="lg"
         >
           <div className="logo" >
-            <Logo className="sidebar__logo--svg"/>
-            <span className="sidebar__logo--title">bookator</span>
+            <Link to="/user/hub">
+              <Logo className="sidebar__logo--svg"/>
+              <span className="sidebar__logo--title">bookator</span>
+            </Link>
           </div>
           <Menu>
             {this.createLinks(routes)}

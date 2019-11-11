@@ -1,4 +1,33 @@
 .donations__container h2.ant-typography {
   color: var(--blue);
   padding-left: 8px;
+  display: inline-block
+}
+
+.donations__container .booklistpagination__container {
+  width: 95%;
+}
+
+@media screen and (max-width: 995px) {
+  .donations__container .booklistpagination__container {
+    width: 100%;
+  }
+}
+
+.donations__container .donations__upload {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  font-weight: bold;
+  height: 5vh;
+  border: none;
+}
+
+.donations__container .donations__upload svg {
+  width: 120%;
+  height: 110%;
+}
+
+.donations__container .donations__upload:hover {
+  opacity: 0.8;
 }
