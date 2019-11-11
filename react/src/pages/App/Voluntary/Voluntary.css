@@ -2,9 +2,60 @@
   margin-top: 3.5vh;
   margin-left: 80%;
 }
-
+.voluntary__header {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
 .voluntary__container h2.ant-typography {
   color: var(--blue);
   padding-left: 8px;
   margin-top: 4vh;
+
+}
+
+.voluntary__container .voluntary__viewToggle {
+  position: absolute;
+  right: 5%;
+  bottom: 18%;
+  height: 5vh;
+  width: 12vw;
+  border: 3px solid var(--blue);
+  background-color: #ECF4F8;
+}
+
+.voluntary__viewToggle .ant-switch-inner {
+  color: var(--blue);
+  font-size: 0.95vw;
+}
+
+.voluntary__container .ant-switch-checked {
+  background-color: #ECF4F8;
+}
+
+.voluntary__container .ant-switch::after {
+  width: 4vh;
+  height: 4vh;
+}
+
+.voluntary__container .locationlistpagination__container {
+  width: 75%;
+  display: inline-block;
+}
+
+.voluntary__container .filter-column__container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 995px) {
+  .voluntary__container .locationlistpagination__container {
+    width: 100%;
+  }
+
+  .voluntary__container .filter-column__container,
+  .voluntary__container .voluntary__viewToggle {
+    display: none;
+  }
 }

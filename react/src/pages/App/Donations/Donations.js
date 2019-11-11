@@ -22,7 +22,7 @@ export class Donations extends Component {
     return (
     <div className="donations__container">
       <SearchHeader/>
-      <div className="donations__header">
+      <div>
         <Typography.Title level={2}>Donated book</Typography.Title>
         <Button className="donations__upload" type="primary">
           <Icon type="upload"/>

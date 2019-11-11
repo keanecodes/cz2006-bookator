@@ -26,10 +26,8 @@ export class Collections extends Component {
       <div className="collections__container">
         <SearchHeader/>
         <Typography.Title level={2}>New Donation Uploads</Typography.Title>
-        <div className="collections__body">
-          <BookListPagination data={listData} pageSize={9}/>
-          <FilterColumn filterType={["title", "author", "genre"]}/>
-        </div>
+        <BookListPagination data={listData} pageSize={9}/>
+        <FilterColumn filterType={["title", "author", "genre"]}/>
       </div>
     )
   }
