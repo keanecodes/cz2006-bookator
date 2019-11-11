@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import Profile from "./Profile";
 
-import { Layout, Select, Avatar } from "antd";
-
-import "./CollectionsHeader.css";
+import { Layout, Select } from "antd";
+import "./SearchHeader.css";
 
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
@@ -82,10 +82,7 @@ export class CollectionsHeader extends Component {
           >
             {options}
           </Select>
-          <div className="collections__header-profile">
-            <Avatar size="large" icon="user" className="collections__header-avatar" />
-            <p>Ben Tan</p>
-          </div>
+          <Profile/>
         </Layout.Header>
       </>
     )

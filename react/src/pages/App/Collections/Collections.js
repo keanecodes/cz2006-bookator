@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { Typography } from "antd";
 
-import CollectionsHeader from "components/CollectionsHeader";
+import SearchHeader from "components/SearchHeader";
+
+import { Typography } from "antd";
+import "./Collections.css"
 
 export class Collections extends Component {
   render() {
     return (
-      <div>
-        <CollectionsHeader/>
-        <Typography.Title level={1}>New Donation Uploads</Typography.Title>
+      <div className="collections__container">
+        <SearchHeader/>
+        <Typography.Title level={2}>New Donation Uploads</Typography.Title>
       </div>
     )
   }

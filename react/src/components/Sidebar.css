@@ -1,8 +1,8 @@
 .ant-layout-sider {
-  min-width: 15vw !important;
+  min-width: 19.5vw !important;
   font-family: 'Gotham';
   color: #4275FF;
-  padding: 15px 20px;
+  padding: 15px 25px 5px 20px;
 }
 
 .logo {
@@ -14,7 +14,6 @@
 }
 
 .sidebar__logo--svg {
-  /* padding: 10px 5px; */
   min-width: 60px;
   width: 25%;
   margin-right: 10px;
@@ -35,17 +34,22 @@
   margin-top: 30px;
 }
 
+.ant-menu-vertical {
+  border-right: 1px solid transparent;
+}
+
 .ant-menu-item .anticon {
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
 
 .ant-menu-vertical .ant-menu-item {
   border-radius: 35px;
-  padding: 0 25px;
-  height: 55px;
+  padding: 0 2vw;
+  min-height: 45px;
+  height: 6vh;
   line-height: 55px;
   font-weight: 600;
-  font-size: 0.85vw;
+  font-size: 1.1vw;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;

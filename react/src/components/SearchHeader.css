@@ -1,0 +1,32 @@
+.collections__header {
+  background-color: #fff;
+  padding: 0;
+  height: 6vh;
+  margin-bottom: 4.5vh;
+  margin-top: 2vh;
+}
+
+.collections__header-search {
+  width: 75%;
+  height: 105%;
+  margin-right: 5%;
+  border: 2px solid transparent;
+}
+
+.collections__header-search .ant-select-selection,
+.collections__header-search .ant-select-selection--single {
+  height: 100%;
+  border-radius: 50px;
+  font-size: 2.5vh;
+  font-weight: bold;
+  border: 1px solid transparent;
+  background-color: rgba(203,203,203,0.19);
+  padding-left: 1%;
+}
+
+.ant-select-selection__rendered {
+  line-height: 6vh;
+  border: none;
+  border-radius: 25px;
+}
+

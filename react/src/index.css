@@ -1,3 +1,7 @@
+:root {
+  --blue: #4275FF;
+}
+
 @font-face {
   font-family: 'Gotham';
   src: url('assets/fonts/Gotham-Bold.otf');

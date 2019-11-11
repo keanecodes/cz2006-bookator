@@ -1,0 +1,16 @@
+.header__profile {
+  width: 20%;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 0;
+}
+
+.header__profile span {
+  vertical-align: middle;
+  font-weight: bold;
+  color: var(--blue);
+  margin-left: 5%;
+  font-size: 1.5vw;
+}
