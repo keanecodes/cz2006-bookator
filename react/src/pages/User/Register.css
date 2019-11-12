@@ -35,48 +35,29 @@
   font-size: 1.5vw;
 }
 
-.reg-form p  {
-  font-size: 4vw;
-}
-
 .registration-fields-wrapper {
   margin: 8% 10% 0 10%;
 }
 
-.reg-form .password-fields {
+.reg-form .password-fields,
+.reg-form .reg-names {
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
 }
 
-.reg-form .reg-profile {
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
+.reg-form .password-fields .ant-form-item,
+.reg-form .reg-names .ant-form-item {
+  width: 48%;
 }
 
-.reg-form .reg-profile .upload .ant-btn {
-  height: 22vh;
-  width: 145%;
-  margin-right: 25px;
-}
-
-.reg-form .reg-profile .upload .anticon-camera {
-  font-size: 3vw;
+.reg-form small {
   text-align: center;
 }
 
-.reg-form .reg-names {
-  width: 60%;
-}
-
-.reg-form .reg-names .ant-form-item {
-  margin-bottom: 5px;
-}
-
 .reg-form .register-btn {
-  margin-top: 10vh;
+  margin-top: 5vh;
   height: 6.5vh;
   width: 100%;
   font-size: 1.8vw;

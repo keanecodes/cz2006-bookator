@@ -28,6 +28,7 @@ class Login extends Component {
           axios
           .post('/login', formValues)
           .then(res => {
+            localStorage.setItem('AuthToken', `Bearer ${res.data.token}`);
             this.setState({loading: false});
             this.props.history.push('/user/hub');
           })

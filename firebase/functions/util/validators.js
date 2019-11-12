@@ -22,6 +22,8 @@ exports.validateSignupData = user => {
   if (user.password !== user.confirmPassword)
     errors.confirmPassword = 'Passwords must match';
   if (isEmpty(user.username)) errors.username = 'Must not be empty';
+  if (isEmpty(user.name)) errors.name = 'Must not be empty';
+  if (!parseInt(user.mobile)) errors.mobile = 'Invalid mobile number';
 
   return {
     errors,

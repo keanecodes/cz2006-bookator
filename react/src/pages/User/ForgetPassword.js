@@ -10,7 +10,7 @@ export class ForgetPassword extends Component {
         <div className="forgetPassword__dialog">
           <div className="forgetPassword__content">
             <Typography.Title type={1}>Retrieve password</Typography.Title>
-            <p>We'll send you an emaiil if you have registered with us before</p>
+            <p>We'll send you an email if you have registered with us before</p>
             <Input placeholder="Email"></Input>
           </div>
           <Button className="forgetPassword__confirm" type="primary" htmlType="submit">Confirm</Button>

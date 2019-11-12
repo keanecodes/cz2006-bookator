@@ -12,7 +12,9 @@ const {
 // Sign users up
 exports.signup = (req, res) => {
   const newUser = {
+    name: req.body.name,
     username: req.body.username,
+    mobile: req.body.mobile,
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.confirmPassword,
@@ -27,7 +29,7 @@ exports.signup = (req, res) => {
     .get()
     .then((doc) => {
       if (doc.exists) {
-        return res.status(400).json({ username: 'this username is already taken' });
+        return res.status(400).json({ username: 'This username is already taken' });
       } else {
         return firebase
           .auth()
@@ -41,7 +43,9 @@ exports.signup = (req, res) => {
     .then((idToken) => {
       token = idToken;
       const userCredentials = {
+        name: newUser.name,
         username: newUser.username,
+        mobile: newUser.mobile,
         email: newUser.email,
         createdAt: new Date().toISOString(),
         userId
