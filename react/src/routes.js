@@ -2,6 +2,7 @@
 import Hub from "pages/User/Hub";
 import Login from "pages/User/Login";
 import Register from "pages/User/Register";
+import ForgetPassword from "pages/User/ForgetPassword";
 //App routes
 import Collections from "pages/App/Collections/Collections";
 import Donations from "pages/App/Donations/Donations";
@@ -15,14 +16,20 @@ import { Route } from "react-router-dom";
 export let routes = [
   {
     path: "/login",
-    name: "Dashboard",
+    name: "Login",
     component: Login,
     layout: "/user"
   },
   {
     path: "/register",
-    name: "Dashboard",
+    name: "Register",
     component: Register,
+    layout: "/user"
+  },
+  {
+    path: "/forget",
+    name: "Forget Password",
+    component: ForgetPassword,
     layout: "/user"
   },
   {

@@ -1,0 +1,84 @@
+.register__container {
+  display: inline-flex;
+}
+
+.reg-decor {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  animation: fadein 1s;
+}
+
+.reg-decor svg {
+  width: 70%;
+  height: 70%;
+  margin-top: 20%;
+}
+
+.reg-form {
+  width: 40vw;
+  background-color: #c8e6fa;
+  height: 100vh;
+}
+
+.reg-form .txt-decor > * {
+  color: var(--blue);
+  margin-left: 10%;
+}
+
+.reg-form > .txt-decor h1 {
+  font-size: 4vw;
+  margin-top: 20%;
+}
+
+.reg-form > .txt-decor p {
+  font-size: 1.5vw;
+}
+
+.reg-form p  {
+  font-size: 4vw;
+}
+
+.registration-fields-wrapper {
+  margin: 8% 10% 0 10%;
+}
+
+.reg-form .password-fields {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.reg-form .reg-profile {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.reg-form .reg-profile .upload .ant-btn {
+  height: 22vh;
+  width: 145%;
+  margin-right: 25px;
+}
+
+.reg-form .reg-profile .upload .anticon-camera {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.reg-form .reg-names {
+  width: 60%;
+}
+
+.reg-form .reg-names .ant-form-item {
+  margin-bottom: 5px;
+}
+
+.reg-form .register-btn {
+  margin-top: 10vh;
+  height: 6.5vh;
+  width: 100%;
+  font-size: 1.8vw;
+  font-weight: bold;
+}
