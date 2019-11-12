@@ -5,6 +5,11 @@ import { Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
 // import jwtDecode from "jwt-decode";
 // import AuthRoute from "util/AuthRoute"
+// Redux
+import { Provider } from 'react-redux';
+import store from './redux/store';
+// import { SET_AUTHENTICATED } from './redux/types';
+// import { logoutUser, getUserData } from './redux/actions/userActions';
 
 import "antd/dist/antd.css";
 import './index.css';
@@ -34,41 +39,37 @@ const hist = createBrowserHistory();
 // }
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route
-        exact path="/"
-        render={props => {
-          return <Login {...props} />;
-        }}
-      />
-      {/* <AuthRoute
-        exact path="/auth/login"
-        component={Login}
-        render={(props) =>
-          authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
-        }
-      />
-      <AuthRoute
-        exact path="/auth/register"
-        component={Register}
-        render={(props) =>
-          authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
-        }
-      /> */}
+  <Provider store={store}>
+    <Router history={hist}>
+      <Switch>
+        <Route
+          exact path="/"
+          render={props => {
+            return <Login {...props} />;
+          }}
+        />
+        {/* <AuthRoute exact path="/auth/login" component={Login} render={(props) =>
+            authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
+          }
+        />
+        <AuthRoute exact path="/auth/register" component={Register} render={(props) =>
+            authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
+          }
+        /> */}
 
-      {getRoutes("/user")}
-      <Route
-        path="/app"
-        render={props => {
-          return <AppLayout {...props} />;
-        }}
-      />
-      <Route render={props => {
-        return <Page404 {...props} />;
-      }} />
-    </Switch>
-  </Router>,
+        {getRoutes("/user")}
+        <Route
+          path="/app"
+          render={props => {
+            return <AppLayout {...props} />;
+          }}
+        />
+        <Route render={props => {
+          return <Page404 {...props} />;
+        }} />
+      </Switch>
+    </Router>
+  </Provider>,
 document.getElementById("root")
 );
 

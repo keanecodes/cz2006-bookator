@@ -1,5 +1,6 @@
 //User routes
 import Hub from "pages/User/Hub";
+import ProfileEdit from "pages/User/ProfileEdit";
 import Login from "pages/User/Login";
 import Register from "pages/User/Register";
 import ForgetPassword from "pages/User/ForgetPassword";
@@ -36,6 +37,12 @@ export let routes = [
     path: "/hub",
     name: "User Hub",
     component: Hub,
+    layout: "/user"
+  },
+  {
+    path: "/profile",
+    name: "User Profile",
+    component: ProfileEdit,
     layout: "/user"
   },
   {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Switch } from "react-router-dom";
-
 import { getRoutes } from "routes.js";
-
 import { Layout } from 'antd';
 
 import Sidebar from 'components/Sidebar';

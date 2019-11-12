@@ -1,0 +1,51 @@
+.profile__cont {
+  width: 40vw;
+  height: 60vh;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--blue);
+}
+
+.profile__header-bar {
+  display: inline-flex;
+}
+
+.profile__header-bar h1 {
+  color: var(--blue);
+  margin-bottom: 0;
+}
+
+.profile__details-cont p:nth-child(2) {
+  margin-top: 0;
+}
+
+.profile__header-bar .ant-btn{
+  position: absolute;
+  right: 0;
+  background: transparent;
+  border: 2px solid var(--blue);
+}
+
+.profile__stats-cont {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.profile__cont .ant-statistic:nth-child(1) > .ant-statistic-title {
+  color: blue;
+}
+
+.profile__cont .ant-statistic:nth-child(2) > .ant-statistic-title {
+  color: salmon;
+}
+
+.profile__cont .ant-statistic:nth-child(3) > .ant-statistic-title {
+  color: orange;
+}

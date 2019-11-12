@@ -6,7 +6,8 @@ firebase.initializeApp(config);
 
 const {
   validateSignupData,
-  validateLoginData
+  validateLoginData,
+  reduceUserDetails
 } = require('../util/validators');
 
 // Sign users up
@@ -95,4 +96,80 @@ exports.login = (req, res) => {
     });
 };
 
+// Add user details
+exports.addUserDetails = (req, res) => {
+  let userDetails = reduceUserDetails(req.body);
 
+  db.doc(`/users/${req.user.username}`)
+    .update(userDetails)
+    .then(() => {
+      return res.json({ message: 'Details added successfully' });
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.status(500).json({ error: err.code });
+    });
+};
+
+// Get own user details
+exports.getAuthenticatedUser = (req, res) => {
+  let userData = {};
+  db.doc(`/users/${req.user.username}`)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        userData.credentials = doc.data();
+        return db
+          .collection('donations')
+          .where('donator', '==', req.user.username)
+          .get();
+      }
+    })
+    .then((data) => {
+      userData.donations = [];
+      data.forEach((doc) => {
+        userData.donations.push(doc.data());
+      });
+      db.doc(`/users/${req.user.username}`)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          userData.credentials = doc.data();
+          return db
+            .collection('collections')
+            .where('collector', '==', req.user.username)
+            .get();
+        }
+      })
+      .then((data) => {
+        userData.collections = [];
+        data.forEach((doc) => {
+          userData.collections.push(doc.data());
+        });
+        db.doc(`/users/${req.user.username}`)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            userData.credentials = doc.data();
+            return db
+              .collection('voluntaries')
+              .where('volunteer', '==', req.user.username)
+              .get();
+          }
+        })
+        .then((data) => {
+          userData.voluntaries = [];
+          data.forEach((doc) => {
+            userData.voluntaries.push(doc.data());
+          });
+          return res.json(userData);
+        })
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.status(500).json({ error: err.code });
+    });
+};
+
+// Upload a profile image for user

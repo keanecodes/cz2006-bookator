@@ -1,9 +1,9 @@
 //REACT CORE PACKAGES
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-
-//OTHER PACKAGES
-import axios from 'axios';
+import PropTypes from 'prop-types';
+// Redux stuff
+import { connect } from 'react-redux';
+import { loginUser } from 'redux/actions/userActions';
 
 //UI STUFF
 import { Form, Icon, Input, Button } from "antd";
@@ -15,38 +15,27 @@ import { ReactComponent as BackDrop1 } from "./assets/men-book.svg";
 
 class Login extends Component {
   state = {
-    loading: false,
     errors: {}
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.UI.errors) {
+      this.setState({ errors: nextProps.UI.errors });
+    }
+  }
 
   handleSubmit = e => {
     e.preventDefault();
 
     this.props.form.validateFields((err, formValues) => {
       if (!err) {
-        this.setState({ loading: true }, () => {
-          axios
-          .post('/login', formValues)
-          .then(res => {
-            localStorage.setItem('AuthToken', `Bearer ${res.data.token}`);
-            this.setState({loading: false});
-            this.props.history.push('/user/hub');
-          })
-          .catch(err => {
-            this.setState({
-              loading: false,
-              errors: err.response
-                ? err.response.data
-                : {general: "Fail to establish connection with our servers :("}
-            })
-            console.error(this.state.errors);
-          })
-        });
+        this.props.loginUser(formValues, this.props.history);
       }
     });
   };
 
   render() {
+    const { UI: { loading } } = this.props;
     const { getFieldDecorator } = this.props.form;
     const { errors } = this.state;
     return (
@@ -91,7 +80,7 @@ class Login extends Component {
               </div>
               <div className="btns-box">
                 <Button onClick={() => this.props.history.push('/user/register')}>Sign Up</Button>
-                <Button type="primary" htmlType="submit" loading={this.state.loading}>
+                <Button type="primary" htmlType="submit" loading={loading}>
                   Login
                 </Button>
               </div>
@@ -107,7 +96,21 @@ class Login extends Component {
   }
 }
 
-const WrappedLogin = Form.create()(Login);
-ReactDOM.render(<WrappedLogin/>, document.getElementById('root'))
+Login.propTypes = {
+  // classes: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  UI: PropTypes.object.isRequired
+};
 
-export default WrappedLogin;
+const mapStateToProps = (state) => ({
+  user: state.user,
+  UI: state.UI
+});
+
+const mapActionsToProps = {
+  loginUser
+};
+const WrappedLogin = Form.create()(Login);
+
+export default connect( mapStateToProps, mapActionsToProps )(WrappedLogin);

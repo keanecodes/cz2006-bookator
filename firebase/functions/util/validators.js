@@ -42,3 +42,12 @@ exports.validateLoginData = user => {
     valid: Object.keys(errors).length === 0 ? true : false
   };
 };
+
+exports.reduceUserDetails = (data) => {
+  let userDetails = {};
+
+  if (!isEmpty(data.name.trim())) userDetails.name = data.name;
+  if (parseInt(data.mobile)) userDetails.mobile = data.mobile;
+
+  return userDetails;
+};

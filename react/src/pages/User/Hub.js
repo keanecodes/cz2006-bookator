@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import "./Hub.css";
 //[^fgs][\w-]+="[^cl][\w\d\-_ ]+" rename linear-gradient clip-path
@@ -10,11 +12,17 @@ import { ReactComponent as VoluntaryDelivery } from "./assets/voluntary-delivery
 
 class Hub extends Component {
   render() {
+    const {
+      user: {
+        credentials: { name },
+        authenticated
+      }
+    } = this.props;
     return (
       <>
-        <div className="hub__user-cont">
+        <div className="hub__user-cont" onClick={()=>{this.props.history.push('/user/profile');}}>
           <Profile className="hub__profile"/>
-          Hey Ben!
+          Hey {authenticated ? name : "loading"}!
         </div>
         <p className="hub__hook">Ready for your "bookenture"?</p>
         <div className="hub__actions">
@@ -39,4 +47,13 @@ class Hub extends Component {
   }
 }
 
-export default Hub;
+const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+Hub.propTypes = {
+  user: PropTypes.object.isRequired,
+  // classes: PropTypes.object.isRequired
+};
+
+export default connect(mapStateToProps)(Hub);

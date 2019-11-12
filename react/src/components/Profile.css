@@ -7,6 +7,10 @@
   margin: 0;
 }
 
+.header__profile:hover {
+  cursor: pointer;
+}
+
 .header__profile span {
   vertical-align: middle;
   font-weight: bold;

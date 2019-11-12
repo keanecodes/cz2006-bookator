@@ -6,11 +6,18 @@ app.use(cors());
 const authMiddleware = require('./util/authMiddleware');
 
 const { getAllDonations, donateABook } = require("./handlers/donations");
-const { signup, login } = require("./handlers/users");
+const {
+  signup,
+  login,
+  addUserDetails,
+  getAuthenticatedUser
+} = require("./handlers/users");
 
 // Donations route
 app.get('/donations', getAllDonations);
 app.post('/donate', authMiddleware, donateABook);
+app.post('/user', authMiddleware, addUserDetails);
+app.get('/user', authMiddleware, getAuthenticatedUser);
 
 // Users route
 app.post('/signup', signup);
