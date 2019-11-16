@@ -18,9 +18,9 @@ class Login extends Component {
     errors: {}
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.UI.errors) {
-      this.setState({ errors: nextProps.UI.errors });
+  componentDidUpdate(prevProps) {
+    if (this.props.UI.errors !== prevProps.UI.errors) {
+      this.setState({ errors: this.props.UI.errors });
     }
   }
 

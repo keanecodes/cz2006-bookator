@@ -136,7 +136,7 @@ exports.getAuthenticatedUser = (req, res) => {
         if (doc.exists) {
           userData.credentials = doc.data();
           return db
-            .collection('collections')
+            .collection('donations')
             .where('collector', '==', req.user.username)
             .get();
         }

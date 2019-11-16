@@ -11,7 +11,10 @@ export class FilterColumn extends Component {
         <Checkbox.Group>
           { this.props.filterType.map(value => {
               return (
-                <><Checkbox value={value}>By {value}</Checkbox><br/></>
+                <div key={`checkbox${Math.random()}`}>
+                  <Checkbox  value={value}>By {value}</Checkbox>
+                  <br/>
+                </div>
               );
             })
           }
