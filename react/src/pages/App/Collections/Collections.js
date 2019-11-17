@@ -24,7 +24,7 @@ export class Collections extends Component {
           title: book.title,
           author: book.author,
           tag: book.tag,
-          key: book.id,
+          key: book.donationId,
         })
       })
       this.setState({listdata: temp, loading: false});

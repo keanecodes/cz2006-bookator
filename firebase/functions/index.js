@@ -9,7 +9,10 @@ const {
   getAllDonations,
   getUserDonations,
   getUserCollections,
-  donateABook } = require("./handlers/donations");
+  uploadImage,
+  donateABook,
+  deleteDonation } = require("./handlers/donations");
+
 const {
   signup,
   login,
@@ -19,9 +22,14 @@ const {
 
 // Donations route
 app.get('/donations', getAllDonations);
-app.post('/donate', authMiddleware, donateABook);
+// app.post('/donate', authMiddleware, donateABook);
+app.post('/donate', donateABook);
+//app.post('/donate/image', authMiddleware, uploadImage);
+app.post('/donate/image', uploadImage);
 app.get('/user/donations', authMiddleware, getUserDonations);
 app.get('/user/collections', authMiddleware, getUserCollections);
+// app.delete('/scream/:screamId', authMiddleware, deleteScream);
+app.delete('/donation/:donationId', authMiddleware, deleteDonation);
 
 // Users route
 app.post('/signup', signup);

@@ -6,7 +6,7 @@ import "./BookListPagination.css"
 
 export class BookListPagination extends Component {
   state = {
-    skeletonData: []
+    skeletonData: [],
   }
 
   genre = ["Fiction"]
@@ -20,15 +20,6 @@ export class BookListPagination extends Component {
   }
 
   render() {
-    const menu = key => {
-      return (
-      <Menu>
-        <Menu.Item key={key ? `delete-${key}` : 0}>
-          {/* eslint-disable-next-line */}
-          <a href="#">Delete</a>
-        </Menu.Item>
-      </Menu>
-    )};
 
     return (
       <>
@@ -51,18 +42,19 @@ export class BookListPagination extends Component {
                   ? (<Dropdown overlay={
                     item.status === "Pending"
                     ? (<Menu>
-                        <Menu.Item  key={item.key ? `edit-${item.key ? item.key : Math.random()}` : 0}>
+                        <Menu.Item  key={item.key ? `edit-${item.key}` : 0}>
                           {/* eslint-disable-next-line */}
                           <a href="#" style={{color: "#4275FF"}}>
                             <Icon type="edit" /> &nbsp; Edit
                           </a>
                         </Menu.Item>
-                        <Menu.Item style={{color: "red"}} key={item.key ? `delete-${item.key ? item.key : Math.random()}` : 0}>
+                        <Menu.Item onClick={() => this.props.handleMenuDelete(item)}
+                          style={{color: "red"}} key={item.key ? `delete-${item.key}` : 0}>
                           <Icon type="delete" /> Delete
                         </Menu.Item>
                       </Menu>)
                     : (<Menu>
-                        <Menu.Item key={item.key ? `edit-${item.key ? item.key : Math.random()}` : 0}>
+                        <Menu.Item key={item.key ? `edit-${item.key}` : 0}>
                           {/* eslint-disable-next-line */}
                           <a href="#" style={{color: "#4275FF"}}>
                             <Icon type="edit" /> &nbsp; Edit
