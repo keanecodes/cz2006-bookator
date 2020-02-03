@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import SearchHeader from "components/SearchHeader";
+// import SearchHeader from "components/SearchHeader";
+import Profile from "components/Profile";
 import BookListPagination from "components/BookListPagination"
 
 import { Typography, Button, Icon, Modal, Steps, message, Input, Upload, Form } from "antd";
@@ -213,10 +214,11 @@ export class Donations extends Component {
 
     return (
     <div className="donations__container">
-      <SearchHeader/>
-      <div>
+      {/* <SearchHeader/> */}
+      <Profile/>
+      <div className="donations__header">
         <Typography.Title level={2}>Donated book</Typography.Title>
-        <Button className="donations__upload" type="primary" onClick={this.showModal}>
+        <Button className="donations__header--upload" type="primary" onClick={this.showModal}>
           <Icon type="upload"/>
           {window.innerWidth > 995 ? "New Donation" : ""}
         </Button>

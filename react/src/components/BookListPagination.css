@@ -14,7 +14,7 @@
   font-weight: 600;
 }
 
-.booklistpagination__container .list-item__img {
+/*.booklistpagination__container .list-item__img {
   float: left;
   width: 90px;
   border-radius: 20px;
@@ -51,7 +51,7 @@
   border: 1px solid transparent;
   width: 30%;
   text-align: center;
-}
+} */
 
 .booklistpagination__container .ant-pagination {
   color: var(--blue);
