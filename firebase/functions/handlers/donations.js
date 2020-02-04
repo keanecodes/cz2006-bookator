@@ -86,6 +86,9 @@ exports.uploadImage = (req, res) => {
     file.pipe(fs.createWriteStream(filepath));
   });
   busboy.on('finish', () => {
+    const tempImgUrl = `https://firebasestorage.googleapis.com/v0/b/${
+          config.storageBucket
+        }/o/${imageFileName}?alt=media`;
     admin
       .storage()
       .bucket()
@@ -98,14 +101,11 @@ exports.uploadImage = (req, res) => {
         }
       })
       .then(() => {
-        const tempImgUrl = `https://firebasestorage.googleapis.com/v0/b/${
-          config.storageBucket
-        }/o/${imageFileName}?alt=media`;
         // return db.doc(`/users/${req.user.username}`).update({ tempImgUrl });
         return db.doc(`/tempimage/5JoitMtlzhuOlc0OAhlw`).update({ tempImgUrl });
       })
       .then(() => {
-        return res.json({ message: 'image uploaded successfully' });
+        return res.json({ message: 'image uploaded successfully', imgUrl: tempImgUrl });
       })
       .catch((err) => {
         console.error(err);
@@ -142,7 +142,7 @@ exports.donateABook = (req, res) => {
         .then(doc => {
           // db.doc(`/users/${req.user.username}`).update({ tempImgUrl: "" });
           db.doc(`/tempimage/5JoitMtlzhuOlc0OAhlw`).update({ tempImgUrl: "" });
-          res.json({message: `document ${doc.id} created successfully`});
+          res.json({message: `document ${doc.id} created successfully`, id: doc.id});
         })
         .catch(err => {
           res.status(500).json({ error: 'something went wrong'});
@@ -162,14 +162,21 @@ exports.deleteDonation = (req, res) => {
       if (doc.data().userHandle !== req.user.handle) {
         return res.status(403).json({ error: 'Unauthorized' });
       } else {
-        return document.delete();
+        admin
+          .storage()
+          .bucket()
+          .file(doc.data().img.match(/\d+\.\w+\\?/g)[0])
+          .delete()
+          .then(() => {
+            document.delete();
+          })
+          .then(() => {
+            res.json({ message: 'Donation' + req.params.donationId + 'deleted successfully' });
+          })
+          .catch((err) => {
+            console.error(err);
+            return res.status(500).json({ error: err.code, message: err.message });
+          });
       }
-    })
-    .then(() => {
-      res.json({ message: 'Donation deleted successfully' });
-    })
-    .catch((err) => {
-      console.error(err);
-      return res.status(500).json({ error: err.code });
-    });
+    })    
 };

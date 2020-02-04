@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import algoliasearch from 'algoliasearch';
 import { connect } from 'react-redux';
 
 // import SearchHeader from "components/SearchHeader";
@@ -12,13 +13,14 @@ import "./Donations.css"
 import axios from "axios";
 axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
-const { Step } = Steps;
+const searchClient = algoliasearch(
+  process.env.REACT_APP_ALGOLIA_APP_ID,
+  process.env.REACT_APP_ALGOLIA_ADMIN_API_KEY
+)
+const index = searchClient.initIndex('donations');
 
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
+
+const { Step } = Steps;
 
 function beforeUpload(file) {
   const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
@@ -82,15 +84,19 @@ export class Donations extends Component {
   next = () => {
     if (this.state.current === 1) {
       message.loading('Uploading donation...');
+      const book = {
+        title: this.state.form.title,
+        author: this.state.form.author,
+        tag: this.state.form.tag,
+        depositPoint: this.state.form.depositPoint,
+        donator: this.props.user.credentials.username,
+      }
       axios
-        .post('/donate', {
-          title: this.state.form.title,
-          author: this.state.form.author,
-          tag: this.state.form.tag,
-          depositPoint: this.state.form.depositPoint,
-          donator: this.props.user.credentials.username,
-        }).then( res => {
+        .post('/donate', book).then( res => {
           console.log(res)
+          book.img = this.state.imageUrl;
+          book.objectID = res.data.id
+          index.addObject(book);
           this.setState({listLoading: true, donations: []}, () => {
             this.setState({form: {title: "", author: "", tag: "", depositPoint: ""}})
             this.getUserBooks("donations");
@@ -115,23 +121,22 @@ export class Donations extends Component {
       return;
     }
     if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, imageUrl =>
-        this.setState({
-          imageUrl,
-          imgLoading: false,
-        }),
-      );
+      this.setState({
+        imageUrl: info.file.response.imgUrl,
+        imgLoading: false,
+      })
     }
   };
 
   handleMenuDelete = item => {
     message.loading(`Attempting to delete ${item.title}`);
     axios.delete(`/donation/${item.key}`).then(res => {
-      const newArr = this.state.donations.filter(book => book.key !== item.key)
-      this.setState({donations: newArr}, () => {
-        message.destroy();
-        message.success(`Deleted ${item.title} successfully.`)
+      index.deleteObject(item.key).then(() => {
+        const newArr = this.state.donations.filter(book => book.key !== item.key)
+        this.setState({donations: newArr}, () => {
+          message.destroy();
+          message.success(`Deleted ${item.title} successfully.`)
+        });
       });
     }).catch(err => {
       message.destroy();

@@ -1,24 +1,17 @@
-.voluntary__container .header__profile {
-  margin-top: 3.5vh;
-  margin-left: 80%;
-}
 .voluntary__header {
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
 }
 .voluntary__container h2.ant-typography {
+  width: calc(74% + 3vw);
   color: var(--blue);
-  padding-left: 8px;
-  margin-top: 4vh;
-
 }
 
 .voluntary__container .voluntary__viewToggle {
-  position: absolute;
-  right: 5%;
-  bottom: 18%;
+  font-weight: bold;
+  height: 5vh;
+  border: none;
   height: 5vh;
   width: 12vw;
   border: 3px solid var(--blue);

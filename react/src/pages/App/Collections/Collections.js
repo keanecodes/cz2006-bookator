@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
 import {
@@ -21,16 +21,26 @@ import "./Collections.css"
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
-  process.env.REACT_APP_ALGOLIA_API_KEY
+  process.env.REACT_APP_ALGOLIA_SEARCH_API_KEY
 );
 
 const Collections = () => {
   const [selectedFilter, setSelectedFilter] = useState([])
   const updateSelectedFilter = selected => { setSelectedFilter(selected)}
 
+  const [refresh, toggleRefresh] = useState(false);
+
+  useEffect(() => {
+    toggleRefresh(refresh => !refresh);
+  }, [])
+
   return (
     <div className="collections__container ais-InstantSearch">
-      <InstantSearch indexName="donations" searchClient={searchClient}>
+      <InstantSearch 
+        indexName="donations" 
+        searchClient={searchClient}
+        refresh={refresh}
+      >
         
         <div className="booklistpagination__container">
           <SearchBox 
