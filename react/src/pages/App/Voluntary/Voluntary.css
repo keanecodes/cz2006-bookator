@@ -4,32 +4,44 @@
   align-content: flex-start;
 }
 .voluntary__container h2.ant-typography {
-  width: calc(74% + 3vw);
+  width: calc(74% + 2.9vw);
   color: var(--blue);
 }
 
-.voluntary__container .voluntary__viewToggle {
+.voluntary__container .voluntary__viewToggle--switch {
   font-weight: bold;
   height: 5vh;
   border: none;
   height: 5vh;
-  width: 12vw;
+  width: 6vw;
   border: 3px solid var(--blue);
   background-color: #ECF4F8;
+  margin-right: 10px;
 }
 
-.voluntary__viewToggle .ant-switch-inner {
+.voluntary__viewToggle--switch .ant-switch-inner {
   color: var(--blue);
   font-size: 0.95vw;
+  font-weight: bold;
 }
 
-.voluntary__container .ant-switch-checked {
-  background-color: #ECF4F8;
+.voluntary__viewToggle .ant-switch-checked {
+  /* background-color: #ECF4F8; */
+  background-color: var(--blue);
 }
 
-.voluntary__container .ant-switch::after {
+
+.voluntary__viewToggle .ant-switch-checked .ant-switch-inner {
+  color: white;
+}
+
+.voluntary__viewToggle .ant-switch::after {
   width: 4vh;
   height: 4vh;
+}
+
+.voluntary__viewToggle .voluntary__viewToggle--label {
+  color: var(--blue);
 }
 
 .voluntary__container .locationlistpagination__container {

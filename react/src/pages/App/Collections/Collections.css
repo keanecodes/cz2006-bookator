@@ -85,6 +85,10 @@
   margin-bottom: 1vh;
 }
 
+.filter-column__container .ant-checkbox-group {
+  margin-bottom: 2vh;
+}
+
 .filter-column__container .ais-ClearRefinements-button {
   color: var(--blue);
   background: rgba(131,206,255,0.15);
