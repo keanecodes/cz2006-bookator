@@ -61,12 +61,10 @@ const Collections = () => {
             <CustomClearRefinements 
               clearStateFilter={() => {
                 setSelectedFilter([])
-                console.log(selectedFilter);
+                // console.log(selectedFilter);
               }}
             />
           </div>
-          {/* <p>By title</p>
-          <RefinementList attribute="title" limit={3} showMore={true} showMoreLimit={5}/> */}
           <p>By author</p>
           <CustomRefinementList attribute="author" limit={3} showMore={true} showMoreLimit={5} selected={selectedFilter} parentPassSelected={updateSelectedFilter}/>
           <p>By genre</p>
@@ -119,7 +117,7 @@ function Hit(props) {
   );
 }
 
-const RefinementList = ({ items, refine, selected, parentPassSelected }) => (
+const CustomRefinementList = connectRefinementList(({ items, refine, selected, parentPassSelected }) => (
   <Checkbox.Group value={selected}>
     {items.map(item => (
       <div key={`filter-checkbox${item.label}`}>
@@ -140,11 +138,9 @@ const RefinementList = ({ items, refine, selected, parentPassSelected }) => (
       </div>
     ))}
   </Checkbox.Group>
-);
+));
 
-const CustomRefinementList = connectRefinementList(RefinementList);
-
-const ClearRefinements = ({ items, refine, clearStateFilter }) => (
+const CustomClearRefinements = connectCurrentRefinements(({ items, refine, clearStateFilter }) => (
   <button 
     className={`ais-ClearRefinements-button ${!items.length ? "ais-ClearRefinements-button--disabled" : null}`}
     onClick={() => { refine(items); clearStateFilter(); }}
@@ -152,9 +148,7 @@ const ClearRefinements = ({ items, refine, clearStateFilter }) => (
   >
     Clear
   </button>
-);
-
-const CustomClearRefinements = connectCurrentRefinements(ClearRefinements);
+));
 
 Hit.propTypes = {
   hit: PropTypes.object.isRequired,

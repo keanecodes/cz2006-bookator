@@ -190,37 +190,3 @@
   max-width: 85%;
   text-align: center;
 }
-
-/*** PAGINATION ***/
-
-.booklistpagination__container .ais-Pagination { 
-  margin-top: 1em;
-  text-align: center;
-}
-
-.booklistpagination__container .ais-Pagination-link {
-  border: none;
-  border-radius: 50%;
-  color: var(--blue);
-  font-weight: 300;
-}
-
-.booklistpagination__container .ais-Pagination-link:hover {
-  background-color: rgba(131,206,255,0.15);
-}
-
-.booklistpagination__container .ais-Pagination-item--nextPage .ais-Pagination-link,
-.booklistpagination__container .ais-Pagination-item--firstPage .ais-Pagination-link,
-.booklistpagination__container .ais-Pagination-item--previousPage .ais-Pagination-link,
-.booklistpagination__container .ais-Pagination-item--lastPage .ais-Pagination-link {
-  font-size: 2.2rem;
-  background-color: transparent;
-  color: var(--blue);
-  font-weight: 300;
-}
-
-.booklistpagination__container .ais-Pagination-item--selected .ais-Pagination-link {
-  background-color: rgba(131,206,255,0.15);
-  color: var(--blue);
-  font-weight: 600;
-}

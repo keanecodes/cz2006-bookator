@@ -1,11 +1,7 @@
-.locationlistpagination__container .ant-list-pagination {
-  text-align: center !important;
-  margin-bottom: 3.5vh;
-}
-
 .locationlistpagination__container .ant-list-item {
   box-shadow: 0 2px 3px 0 rgba(66,117,255,0.15);
   border-radius: 5px 0 25px 0;
+  transition: ease-in-out 0.1s background;
 }
 
 .locationlistpagination__container .list-item__left-corner {
@@ -51,44 +47,5 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.locationlistpagination__container .ant-pagination {
-  color: var(--blue);
-  font-weight: 300;
-}
-
-.locationlistpagination__container .ant-pagination-next a:not([aria-disabled="true"]),
-.locationlistpagination__container .ant-pagination-prev a:not([aria-disabled="true"]) {
-  border: 1px solid transparent;
-  font-size: 1.5vw;
-  color: var(--blue);
-}
-
-.locationlistpagination__container .ant-pagination-disabled {
-  opacity: 0.4;
-}
-
-.locationlistpagination__container .ant-pagination-item-link:hover {
-  background-color: rgba(131,206,255,0.15);
-  border-radius: 25px;
-}
-
-.locationlistpagination__container .ant-pagination-item {
-  border-radius: 25px;
-  border: 1px solid transparent;
-}
-
-.locationlistpagination__container .ant-pagination-item a {
-  color: var(--blue);
-  font-weight: 600;
-}
-
-.locationlistpagination__container .ant-pagination-item-active {
-  background-color: rgba(131,206,255,0.15);
-}
-
-.locationlistpagination__container .ant-pagination-item:hover {
-  background-color: rgba(131,206,255,0.05);
 }
 

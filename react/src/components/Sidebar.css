@@ -12,10 +12,20 @@
   align-items: center;
   margin-top: 1.5vh;
   color: var(--blue);
-  width: 75%;
+  width: 80%;
+  transition: ease-in-out 0.15s background-color;
 }
 
-.logo a span:after,
+.logo a {
+  border-radius: 25px;
+  padding: 8px 25px 10px 0;
+}
+
+.logo a:hover {
+  background-color: rgba(131,206,255,0.15);
+}
+
+/* .logo a span:after,
 .logo a span:after {
   content: '';
   width: 0px;
@@ -29,7 +39,9 @@
 .logo a:hover span:after,
 .logo a:hover span:after {
   width: 100%;
-}
+} */
+
+
 
 .sidebar__logo--svg {
   min-width: 60px;
@@ -49,7 +61,7 @@
 }
 
 .ant-menu {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .ant-menu-vertical {
