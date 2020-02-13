@@ -55,7 +55,9 @@ const Voluntary = () => {
         onMouseLeave={() => onHitOver(null)}
       >
         <div className={classNames.join(' ').trim()}>
-          <span>{hit.name}</span>
+          <span>{hit.name} 
+            <center>{`${hit.donationIds.length} Books`}<br/></center> 
+          </span>
         </div>
       </CustomMarker>
     );

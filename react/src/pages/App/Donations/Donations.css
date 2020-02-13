@@ -32,6 +32,12 @@
   border-top: none;
 }
 
+.donations__upload-modal .steps-action button:nth-child(2):hover {
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(131,206,255,0.15);
+}
+
 .donation__upload-modal__avatar-uploader {
   width: 30%;
   height: 50%;

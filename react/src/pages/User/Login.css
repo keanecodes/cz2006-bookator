@@ -88,7 +88,7 @@
   height: 3px;
   display: block;
   background: #4275FF;
-  transition: 300ms;
+  transition: ease-in-out all 180ms;
 }
 
 .fields-box button:hover span:after,
@@ -109,15 +109,7 @@
   height: 100%;
   font-size: 2.3vh;
   font-weight: 400;
-}
-
-.ant-btn,
-.ant-btn:focus,
-.ant-btn-primary:hover,
-.ant-btn-primary:focus,
-.ant-btn:hover,
-.ant-btn-primary {
-  border-width: 4px
+  border: none;
 }
 
 .btns-box button:nth-child(1) {

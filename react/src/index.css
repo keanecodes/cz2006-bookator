@@ -84,16 +84,6 @@ code {
   color: #4275FF;
 }
 
-.ant-btn:hover {
-  border: 1px solid #4275FF;
-  color: #4275FF;
-}
-
-.ant-btn:focus {
-  border: 1px solid white;
-  color: #4275FF;
-}
-
 .ant-btn-primary {
   background-color: #4275FF;
   border: 1px solid #4275FF;
@@ -109,6 +99,13 @@ code {
 .ant-btn-primary:focus {
   border: 1px solid white;
   color: white;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus,
+.ant-btn-primary:active {
+  opacity: 0.9;
+  border: none;
 }
 
 .ant-btn-link,

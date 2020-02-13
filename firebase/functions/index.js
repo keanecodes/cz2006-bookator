@@ -16,6 +16,7 @@ const {
 const {
   signup,
   login,
+  resetPassword,
   addUserDetails,
   getAuthenticatedUser
 } = require("./handlers/users");
@@ -34,6 +35,7 @@ app.delete('/donation/:donationId', authMiddleware, deleteDonation);
 // Users route
 app.post('/signup', signup);
 app.post('/login', login);
+app.post('/reset', resetPassword);
 app.post('/user', authMiddleware, addUserDetails);
 app.get('/user', authMiddleware, getAuthenticatedUser);
 

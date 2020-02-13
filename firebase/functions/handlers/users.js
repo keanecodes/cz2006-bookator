@@ -66,6 +66,27 @@ exports.signup = (req, res) => {
       }
     });
 };
+
+exports.resetPassword = (req, res) => {
+  // Reset Your bookator Account Password
+  // <p>Hey there!</p>
+  // <p>Follow this <a href='%LINK%'>link</a> to reset your bookator password for your account.</p>
+  // <p>If you didn’t ask to reset your password, you can ignore this email.</p>
+
+  // Action URL (%LINK% value)
+  // https://cz2006-bookator.firebaseapp.com/__/auth/action
+
+  // TODO: Create custom email action handlers
+
+  firebase.auth().sendPasswordResetEmail(req.body.email)
+    .then(function() {
+      return res.status(200).json({ message: 'Password reset email sent!' });
+    })
+    .catch(function(err) {
+      return res.status(400).json(err);
+    });
+};
+
 // Log user in
 exports.login = (req, res) => {
   const user = {
