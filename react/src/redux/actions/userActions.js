@@ -12,13 +12,13 @@ export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
     .post('/login', userData)
-    .then((res) => {
+    .then(res => {
       setAuthorizationHeader(res.data.token);
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
       history.push('/user/hub');
     })
-    .catch((err) => {
+    .catch(err => {
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data
@@ -30,26 +30,26 @@ export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_USER });
   axios
     .get('/user')
-    .then((res) => {
+    .then(res => {
       dispatch({
         type: SET_USER,
         payload: res.data
       });
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 };
 
 export const registerUser = (newUserData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
     .post('/signup', newUserData)
-    .then((res) => {
+    .then(res => {
+      dispatch({ type: CLEAR_ERRORS });
       setAuthorizationHeader(res.data.token);
       dispatch(getUserData());
-      dispatch({ type: CLEAR_ERRORS });
       history.push('/user/hub');
     })
-    .catch((err) => {
+    .catch(err => {
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data
@@ -58,13 +58,13 @@ export const registerUser = (newUserData, history) => (dispatch) => {
 };
 
 export const logoutUser = () => (dispatch) => {
-  localStorage.removeItem('AuthToken');
+  localStorage.removeItem('BookatorAuthToken');
   delete axios.defaults.headers.common['Authorization'];
   dispatch({ type: SET_UNAUTHENTICATED });
 };
 
 const setAuthorizationHeader = (token) => {
   const AuthToken = `Bearer ${token}`;
-  localStorage.setItem('AuthToken', AuthToken);
+  localStorage.setItem('BookatorAuthToken', AuthToken);
   axios.defaults.headers.common['Authorization'] = AuthToken;
 };

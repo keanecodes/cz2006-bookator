@@ -1,21 +1,21 @@
+// Framework
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-import axios from 'axios'
-// import jwtDecode from "jwt-decode";
-// import AuthRoute from "util/AuthRoute"
-// Redux
-import { Provider } from 'react-redux';
-import store from './redux/store';
-// import { SET_AUTHENTICATED } from './redux/types';
-// import { logoutUser, getUserData } from './redux/actions/userActions';
-
-import "antd/dist/antd.css";
-import './index.css';
-
+import { createBrowserHistory } from "history";
 import * as serviceWorker from './serviceWorker';
 
+// Data handling 
+import axios from 'axios'
+import jwtDecode from "jwt-decode";
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { SET_AUTHENTICATED } from './redux/types';
+import { logoutUser, getUserData } from './redux/actions/userActions';
+
+// Design 
+import "antd/dist/antd.css";
+import './index.css';
 import AppLayout from "./pages/App/AppLayout"
 import Login from "./pages/User/Login"
 import Page404 from "./pages/Page404"
@@ -25,18 +25,18 @@ axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 const hist = createBrowserHistory();
 
-// let authenticated;
-// const token = localStorage.AuthToken;
-// if (token) {
-//   const decodedToken = jwtDecode(token);
-//   console.log(decodedToken)
-//   if (decodedToken.exp * 1000 < Date.now()) {
-//     authenticated = false;
-//     window.location.href = '/auth/login';
-//   } else {
-//     authenticated = true;
-//   }
-// }
+const token = localStorage.BookatorAuthToken;
+if (token) {
+  const decodedToken = jwtDecode(token);
+  if (decodedToken.exp * 1000 < Date.now()) {
+    store.dispatch(logoutUser());
+    window.location.href = '/';
+  } else {
+    store.dispatch({ type: SET_AUTHENTICATED });
+    axios.defaults.headers.common['Authorization'] = token;
+    store.dispatch(getUserData());
+  }
+}
 
 ReactDOM.render(
   <Provider store={store}>
@@ -48,22 +48,16 @@ ReactDOM.render(
             return <Login {...props} />;
           }}
         />
-        {/* <AuthRoute exact path="/auth/login" component={Login} render={(props) =>
-            authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
-          }
-        />
-        <AuthRoute exact path="/auth/register" component={Register} render={(props) =>
-            authenticated === true ?  <Redirect to="/user/hub" /> : <Component {...props} />
-          }
-        /> */}
 
         {getRoutes("/user")}
+
         <Route
           path="/app"
           render={props => {
             return <AppLayout {...props} />;
           }}
         />
+
         <Route render={props => {
           return <Page404 {...props} />;
         }} />

@@ -17,8 +17,6 @@ import Profile from "components/Profile";
 import { Typography, Empty, Tag, Checkbox } from "antd";
 import "./Collections.css"
 
-// axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
   process.env.REACT_APP_ALGOLIA_SEARCH_API_KEY
