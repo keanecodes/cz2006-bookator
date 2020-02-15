@@ -8,26 +8,60 @@
   left: 0;
   right: 0;
   color: var(--blue);
+  z-index: 10;
+}
+
+.profile__user-icon {
+  display: inline-block;
+  width: 35%;
+  margin-left: -10%;
+  margin-right: 5%;
+}
+
+.profile__details-cont {
+  display: inline-block;
+  width: 65%;
+  position: absolute;
+  top: 10%;
 }
 
 .profile__header-bar {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .profile__header-bar h1 {
   color: var(--blue);
   margin-bottom: 0;
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile__details-cont p:nth-child(2) {
   margin-top: 0;
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.profile__header-bar .ant-btn{
-  position: absolute;
-  right: 0;
+.profile__details-cont p:nth-child(3) {
+  margin-top: 8%;
+}
+
+.profile__header-bar .ant-btn,
+.profile__header-bar .ant-btn:focus {
   background: transparent;
   border: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+.profile__header-bar .ant-btn:hover{
+  background: var(--blue);
+  color: white;
 }
 
 .profile__stats-cont {
@@ -38,14 +72,92 @@
   margin-top: 5vh;
 }
 
-.profile__cont .ant-statistic:nth-child(1) > .ant-statistic-title {
+.profile__stat--book-collections:hover .bc0,
+.profile__stat--book-donations:hover .de0,
+.profile__stat--book-voluntary:hover .vd0 {
+  animation: svg-hover 0.75s;
+}
+
+.profile__stat {
+  width: 20%;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile__stat--book-collections {
   color: blue;
 }
 
-.profile__cont .ant-statistic:nth-child(2) > .ant-statistic-title {
+.profile__stat--book-donations {
   color: salmon;
 }
 
-.profile__cont .ant-statistic:nth-child(3) > .ant-statistic-title {
+.profile__stat--book-voluntary {
   color: orange;
+}
+
+.profile__stat span {
+  color: white;
+  font-weight: 600;
+  font-size: 2vw;
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  right: 0;
+}
+
+.profile__stat--book-voluntary span {
+  width: 90%;
+}
+
+.profile__stat p {
+  margin-top: 10%;
+  font-size: 1.3vw;
+  transition: all 0.25s ease-in-out;
+}
+
+.profile__stat--book-donations p {
+  margin-top: 15%;
+}
+
+.profile__stat:hover p {
+  opacity: 0.7;
+}
+
+.profile__decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.profile__decor-svg {
+  width: 20vw;
+  height: 20vh;
+  position: absolute;
+}
+
+.profile__decor--left {
+  width: 35vw;
+  height: 70vh;
+  left: -15%;
+  top: 20%;
+}
+
+.profile__decor--topright {
+  width: 30vw;
+  height: 30vh;
+  right: -10%;
+  top: -10%;
+  transform: rotate(-20deg);
+}
+
+.profile__decor--botright {
+  width: 40vw;
+  height: 40vh;
+  right: -15%;
+  bottom: -10%;
+  transform: rotate(40deg);
 }
