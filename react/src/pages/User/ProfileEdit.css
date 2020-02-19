@@ -25,6 +25,23 @@
   top: 10%;
 }
 
+.profile__details-cont .ant-form {
+  color: var(--blue);
+}
+
+.ant-spin-blur {
+  overflow: visible;
+}
+
+.ant-spin-blur::after {
+  border-radius: 25px;
+}
+
+.ant-spin-container::after {
+  left: -5%;
+  width: 105%;
+}
+
 .profile__header-bar {
   display: flex;
   flex-direction: row;
@@ -136,7 +153,7 @@
 .profile__decor-svg {
   width: 20vw;
   height: 20vh;
-  position: absolute;
+  position: absolute; 
 }
 
 .profile__decor--left {
@@ -144,6 +161,7 @@
   height: 70vh;
   left: -15%;
   top: 20%;
+  animation: fadein 0.5s;
 }
 
 .profile__decor--topright {
@@ -167,7 +185,7 @@
   margin-bottom: 0;
   border: none;
   width: 85%;
-  animation: fadein 1s;
+  animation: fadein 0.25s;
 }
 
 .profile__details-cont .ant-form-item:nth-child(2) {
@@ -199,7 +217,7 @@
 
 .profile__details-cont .ant-input#username,
 .profile__details-cont .ant-input#mobile {
-  padding: 5px 30px;
+  padding: 5px 0 5px 30px;
 }
 
 .profile__details-cont .ant-form-item .ant-form-item-control {
@@ -221,8 +239,10 @@
 }
 
 .profile__details-cont .ant-form-item-control .ant-form-explain {
-  width: 55%;
-  line-height: 40px;
+  height: 30px;
+  line-height: 50px;
+  font-size: 0.8em;
+  overflow: hidden;
 }
 
 .profile__details-cont .ant-form-item-control .ant-form-item-children {
